@@ -5,10 +5,10 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
+	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@matchachoice/ui/components/card";
-import { Field, FieldDescription } from "@matchachoice/ui/components/field";
 import { Input } from "@matchachoice/ui/components/input";
 import { Label } from "@matchachoice/ui/components/label";
 import { useForm } from "@tanstack/react-form";
@@ -63,9 +63,11 @@ export default function SignUpForm() {
 		<div className="flex h-full items-center justify-center p-6">
 			<Card className="w-full max-w-md">
 				<CardHeader className="text-center">
-					<CardTitle className="text-xl">Create Account</CardTitle>
+					<CardTitle className="text-xl">
+						Set up your MatchaChoice instance
+					</CardTitle>
 					<CardDescription>
-						Sign up to get started with your account.
+						Create the owner account to get started.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -151,22 +153,23 @@ export default function SignUpForm() {
 							})}
 						>
 							{({ canSubmit, isSubmitting }) => (
-								<Field>
-									<Button
-										className="w-full"
-										disabled={!canSubmit || isSubmitting}
-										type="submit"
-									>
-										{isSubmitting ? "Submitting..." : "Sign Up"}
-									</Button>
-									<FieldDescription className="text-center">
-										Already have an account? <a href="/login">Sign in</a>
-									</FieldDescription>
-								</Field>
+								<Button
+									className="w-full"
+									disabled={!canSubmit || isSubmitting}
+									type="submit"
+								>
+									{isSubmitting ? "Submitting..." : "Sign Up"}
+								</Button>
 							)}
 						</form.Subscribe>
 					</form>
 				</CardContent>
+				<CardFooter className="justify-center">
+					<p className="text-center text-muted-foreground text-sm">
+						This is the only admin account for now. You can add more in future
+						versions.
+					</p>
+				</CardFooter>
 			</Card>
 		</div>
 	);
