@@ -8,7 +8,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@matchachoice/ui/components/card";
-import { Field, FieldDescription } from "@matchachoice/ui/components/field";
 import { Input } from "@matchachoice/ui/components/input";
 import { Label } from "@matchachoice/ui/components/label";
 import { useForm } from "@tanstack/react-form";
@@ -151,18 +150,13 @@ export default function SignUpForm() {
 							})}
 						>
 							{({ canSubmit, isSubmitting }) => (
-								<Field>
-									<Button
-										className="w-full"
-										disabled={!canSubmit || isSubmitting}
-										type="submit"
-									>
-										{isSubmitting ? "Submitting..." : "Sign Up"}
-									</Button>
-									<FieldDescription className="text-center">
-										Already have an account? <a href="/login">Sign in</a>
-									</FieldDescription>
-								</Field>
+								<Button
+									className="w-full"
+									disabled={!canSubmit || isSubmitting}
+									type="submit"
+								>
+									{isSubmitting ? "Submitting..." : "Sign Up"}
+								</Button>
 							)}
 						</form.Subscribe>
 					</form>
