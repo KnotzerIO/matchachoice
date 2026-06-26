@@ -78,15 +78,15 @@ export interface ResultCta {
 // question/result) is edited or deleted.
 
 export interface AnswerSnapshot {
-	questionId: string;
 	label: string;
+	questionId: string;
 	type: QuestionTypeName;
 	value: AnswerValue;
 }
 
 export interface ResultSnapshot {
-	resultId: string;
-	title: string;
 	body?: string;
 	matchPct: number;
+	resultId: string;
+	title: string;
 }

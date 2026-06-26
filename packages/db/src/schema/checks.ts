@@ -16,8 +16,8 @@ import { user } from "./auth";
 import {
 	type CheckTheme,
 	type ExclusionRule,
-	type QuestionConfig,
 	QUESTION_TYPES,
+	type QuestionConfig,
 	type ResultCta,
 	type ScoreTargets,
 	type VisibilityRule,

@@ -75,6 +75,7 @@ function Field({
 	...props
 }: React.ComponentProps<"div"> & VariantProps<typeof fieldVariants>) {
 	return (
+		// biome-ignore lint/a11y/useSemanticElements: The field wrapper is a non-semantic container for the label, content, and error message. The semantic elements are used inside the field wrapper (e.g., <label>, <input>, <select>, etc.), which provide the necessary accessibility features.
 		<div
 			className={cn(fieldVariants({ orientation }), className)}
 			data-orientation={orientation}
@@ -194,7 +195,7 @@ function FieldError({
 			...new Map(errors.map((error) => [error?.message, error])).values(),
 		];
 
-		if (uniqueErrors?.length == 1) {
+		if (uniqueErrors?.length === 1) {
 			return uniqueErrors[0]?.message;
 		}
 

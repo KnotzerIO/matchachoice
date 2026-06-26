@@ -1,4 +1,5 @@
 import { createDb } from "@matchachoice/db";
+// biome-ignore lint/performance/noNamespaceImport: Better Auth's drizzleAdapter needs the full set of auth tables as one object; the namespace import is the idiomatic way to hand them over.
 import * as schema from "@matchachoice/db/schema/auth";
 import { env } from "@matchachoice/env/server";
 import { betterAuth } from "better-auth";

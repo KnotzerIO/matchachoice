@@ -110,12 +110,8 @@
           "name": "account_user_id_user_id_fk",
           "tableFrom": "account",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -202,12 +198,8 @@
           "name": "session_user_id_user_id_fk",
           "tableFrom": "session",
           "tableTo": "user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -217,9 +209,7 @@
         "session_token_unique": {
           "name": "session_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       },
       "policies": {},
@@ -283,9 +273,7 @@
         "user_email_unique": {
           "name": "user_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -513,12 +501,8 @@
           "name": "check_owner_id_user_id_fk",
           "tableFrom": "check",
           "tableTo": "user",
-          "columnsFrom": [
-            "owner_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["owner_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -628,12 +612,8 @@
           "name": "question_check_id_check_id_fk",
           "tableFrom": "question",
           "tableTo": "check",
-          "columnsFrom": [
-            "check_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["check_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -741,12 +721,8 @@
           "name": "result_check_id_check_id_fk",
           "tableFrom": "result",
           "tableTo": "check",
-          "columnsFrom": [
-            "check_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["check_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -832,12 +808,8 @@
           "name": "event_check_id_check_id_fk",
           "tableFrom": "event",
           "tableTo": "check",
-          "columnsFrom": [
-            "check_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["check_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -845,12 +817,8 @@
           "name": "event_question_id_question_id_fk",
           "tableFrom": "event",
           "tableTo": "question",
-          "columnsFrom": [
-            "question_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["question_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -944,12 +912,8 @@
           "name": "submission_check_id_check_id_fk",
           "tableFrom": "submission",
           "tableTo": "check",
-          "columnsFrom": [
-            "check_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["check_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -957,12 +921,8 @@
           "name": "submission_matched_result_id_result_id_fk",
           "tableFrom": "submission",
           "tableTo": "result",
-          "columnsFrom": [
-            "matched_result_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["matched_result_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -978,18 +938,12 @@
     "public.check_status": {
       "name": "check_status",
       "schema": "public",
-      "values": [
-        "draft",
-        "published"
-      ]
+      "values": ["draft", "published"]
     },
     "public.lead_capture_position": {
       "name": "lead_capture_position",
       "schema": "public",
-      "values": [
-        "before",
-        "after"
-      ]
+      "values": ["before", "after"]
     },
     "public.question_type": {
       "name": "question_type",
@@ -1008,12 +962,7 @@
     "public.event_type": {
       "name": "event_type",
       "schema": "public",
-      "values": [
-        "view",
-        "start",
-        "complete",
-        "drop"
-      ]
+      "values": ["view", "start", "complete", "drop"]
     }
   },
   "schemas": {},
