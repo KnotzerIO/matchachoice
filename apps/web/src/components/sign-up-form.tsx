@@ -5,6 +5,7 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
+	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@matchachoice/ui/components/card";
@@ -62,9 +63,11 @@ export default function SignUpForm() {
 		<div className="flex h-full items-center justify-center p-6">
 			<Card className="w-full max-w-md">
 				<CardHeader className="text-center">
-					<CardTitle className="text-xl">Create Account</CardTitle>
+					<CardTitle className="text-xl">
+						Set up your MatchaChoice instance
+					</CardTitle>
 					<CardDescription>
-						Sign up to get started with your account.
+						Create the owner account to get started.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -161,6 +164,12 @@ export default function SignUpForm() {
 						</form.Subscribe>
 					</form>
 				</CardContent>
+				<CardFooter className="justify-center">
+					<p className="text-center text-muted-foreground text-sm">
+						This is the only admin account for now. You can add more in future
+						versions.
+					</p>
+				</CardFooter>
 			</Card>
 		</div>
 	);
