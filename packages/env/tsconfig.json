@@ -1,0 +1,6 @@
+{
+  "extends": "@matchachoice/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}

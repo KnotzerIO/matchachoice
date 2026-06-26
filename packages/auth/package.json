@@ -1,0 +1,24 @@
+{
+  "name": "@matchachoice/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@matchachoice/db": "workspace:*",
+    "@matchachoice/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@matchachoice/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
