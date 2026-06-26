@@ -23,6 +23,8 @@
     "docker:up": "docker compose up -d --build",
     "docker:down": "docker compose down",
     "docker:logs": "docker compose logs -f",
+    "ui:add": "pnpm dlx shadcn@latest add -c packages/ui",
+    "web:add": "pnpm dlx shadcn@latest add -c apps/web",
     "check": "ultracite check",
     "fix": "ultracite fix"
   },
