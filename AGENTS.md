@@ -1,3 +1,45 @@
+# MatchaChoice — Agent Guide
+
+MatchaChoice turns the consultation you'd give in person into a short, scored question flow that lives on your site — and routes the right person to the right next step.
+
+## Monorepo layout
+
+Turborepo + pnpm workspaces.
+
+- `apps/web` — Next.js (App Router): admin, public renderer, API
+- `apps/marketing` — Astro + Starlight: marketing, blog, docs _(planned)_
+- `packages/db` — Drizzle schema + migrations (PostgreSQL)
+- `packages/auth` — Better Auth config
+- `packages/ui` — shadcn/ui components + design tokens (`src/styles/globals.css`)
+- `packages/env` — typed env access (`@matchachoice/env/server`)
+- `packages/config` — shared tsconfig / tooling
+
+## Stack
+
+Next.js · TypeScript (strict) · PostgreSQL · Drizzle · Better Auth · shadcn/ui · Tailwind v4. Lint/format: Ultracite (Biome). Tests: Vitest + Playwright.
+
+## Commands
+
+- Dev: `pnpm dev`
+- Lint/format: `pnpm dlx ultracite fix`
+- Run one package: `pnpm --filter @matchachoice/<name> <script>`
+- DB workflow: edit `packages/db/src/schema/*` → `pnpm --filter @matchachoice/db db:generate` (creates a migration) → `db:migrate` to apply → `db:studio` to inspect.
+
+## Conventions
+
+- Commits: Conventional Commits (`feat:`, `fix:`, `chore:` …)
+- Branches: short-lived `feat/`, `fix/`, `docs/`; squash merge to `main`; `main` is always deployable
+- Database:
+  - Domain IDs are `uuid` (`defaultRandom`). The auth tables are owned by Better Auth (text IDs) — **do not modify** `schema/auth.ts`.
+  - Flexible nested config (question options, visibility/exclusion rules, scoring) is stored as typed `jsonb` via `.$type<…>()`; the shapes live in `packages/db/src/schema/types.ts` and are shared with the scoring engine.
+  - Authoring tables → `checks.ts`, runtime tables → `submissions.ts`, re-exported from `schema/index.ts`.
+
+## Scope discipline
+
+v1 (`0.1.0`) is deliberately small. **Do not add** without being asked: AI features, multi-user, multi-language, A/B testing, plugin system, save & resume, PDF export, email result, audit log, SSO. When a product decision is ambiguous, ask rather than guess.
+
+---
+
 # Ultracite Code Standards
 
 This project uses **Ultracite**, a zero-config preset that enforces strict code quality standards through automated formatting and linting.
